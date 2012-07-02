@@ -1,10 +1,10 @@
-package com.gmail.darkgoul123;
+package com.webs.darkgoul123;
 
 import org.powerbot.concurrent.LoopTask;
 
-import com.gmail.darkgoul123.handlers.GuthixHandler;
-import com.gmail.darkgoul123.handlers.SaradominHandler;
-import com.gmail.darkgoul123.handlers.ZamorakHandler;
+import com.webs.darkgoul123.handlers.GuthixHandler;
+import com.webs.darkgoul123.handlers.SaradominHandler;
+import com.webs.darkgoul123.handlers.ZamorakHandler;
 
 public class Loop extends LoopTask {
 

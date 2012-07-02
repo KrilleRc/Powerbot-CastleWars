@@ -1,4 +1,4 @@
-package com.gmail.darkgoul123.gui;
+package com.webs.darkgoul123.gui;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import com.gmail.darkgoul123.Loop;
-import com.gmail.darkgoul123.interfaces.GuiImpl;
+import com.webs.darkgoul123.Loop;
+import com.webs.darkgoul123.interfaces.GuiImpl;
 
 @SuppressWarnings("serial")
 public class StyleChooser extends JFrame implements ActionListener, GuiImpl {

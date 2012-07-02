@@ -1,4 +1,4 @@
-package com.gmail.darkgoul123.interfaces;
+package com.webs.darkgoul123.interfaces;
 
 import org.powerbot.game.api.wrappers.Area;
 import org.powerbot.game.api.wrappers.Tile;

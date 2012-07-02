@@ -1,4 +1,4 @@
-package com.gmail.darkgoul123.handlers;
+package com.webs.darkgoul123.handlers;
 
 
 import org.powerbot.game.api.methods.Walking;
@@ -13,9 +13,9 @@ import org.powerbot.game.api.wrappers.Tile;
 import org.powerbot.game.api.wrappers.interactive.Player;
 import org.powerbot.game.api.wrappers.node.SceneObject;
 
-import com.gmail.darkgoul123.Loop;
-import com.gmail.darkgoul123.interfaces.EnvironmentImpl;
-import com.gmail.darkgoul123.interfaces.GuthixImpl;
+import com.webs.darkgoul123.Loop;
+import com.webs.darkgoul123.interfaces.EnvironmentImpl;
+import com.webs.darkgoul123.interfaces.GuthixImpl;
 
 public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 

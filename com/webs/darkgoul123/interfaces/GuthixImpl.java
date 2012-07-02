@@ -1,4 +1,5 @@
-package com.gmail.darkgoul123.interfaces;
+package com.webs.darkgoul123.interfaces;
+
 
 public interface GuthixImpl extends SaradominImpl, ZamorakImpl {
 

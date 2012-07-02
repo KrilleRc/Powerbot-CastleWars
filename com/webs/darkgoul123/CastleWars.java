@@ -1,8 +1,8 @@
-package com.gmail.darkgoul123;
+package com.webs.darkgoul123;
 import org.powerbot.game.api.ActiveScript;
 import org.powerbot.game.api.Manifest;
 
-import com.gmail.darkgoul123.gui.TeamChooser;
+import com.webs.darkgoul123.gui.TeamChooser;
 
 @Manifest(
 		authors = { "DarkGhoul45" },
