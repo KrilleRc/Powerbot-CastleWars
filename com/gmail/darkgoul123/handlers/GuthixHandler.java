@@ -79,8 +79,9 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 						Camera.turnTo(player);
 						Time.sleep(Random.nextInt(750, 1250));
 					}
-					player.interact("Attack");
-					Time.sleep(Random.nextInt(750, 1250));
+					if(player.interact("Attack")) {
+						Time.sleep(Random.nextInt(750, 1250));
+					}
 				}
 			} else {
 				Tile t = new Tile(0, 0, 0);
