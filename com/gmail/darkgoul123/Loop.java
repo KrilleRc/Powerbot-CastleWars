@@ -25,11 +25,11 @@ public class Loop extends LoopTask {
 		boolean gotStyle = s != null;
 		if(gotTeam && gotStyle) {
 			if(t == Team.GUTHIX) {
-				new GuthixHandler();
+				GuthixHandler.handle();
 			} else if(t == Team.SARADOMIN) {
-				new SaradominHandler();
+				SaradominHandler.handle();
 			} else {
-				new ZamorakHandler();
+				ZamorakHandler.handle();
 			}
 		}
 		return 0;
