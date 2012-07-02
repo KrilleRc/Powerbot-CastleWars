@@ -28,7 +28,6 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 		boolean inWaitingRoom = Widgets.get(57).getChild(1).isOnScreen();
 		SceneObject portal = SceneEntities.getNearest(guthixPortalId);
 		SceneObject ladder = SceneEntities.getNearest(saradominLadderId, zamorakLadderId);
-		SceneObject stairs = SceneEntities.getNearest(downStairsId);
 		if(Widgets.get(985).getChild(2).isOnScreen()) {
 			if(Widgets.get(985).getChild(77).click(true)){
 				Time.sleep(Random.nextInt(750, 1250));
@@ -50,26 +49,24 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 						Camera.turnTo(ladder);
 						Time.sleep(Random.nextInt(750, 1250));
 					}
-					ladder.interact("Climb");
-					Time.sleep(Random.nextInt(750, 1250));
+					if(ladder.interact("Climb")) {
+						Time.sleep(Random.nextInt(750, 1250));
+					}
 				} else {
 					Tile t = new Tile(0, 0, 0);
 					waitForGame(t);
 				}
 			} else {
-				if(ladder != null && SceneEntities.getNearest(4472) == null && ladder.getLocation().canReach()) {
+				if(ladder != null) {
 					if(!ladder.isOnScreen()) {
 						Camera.turnTo(ladder);
 						Time.sleep(Random.nextInt(750, 1250));
 					}
-					ladder.interact("Climb");
+					if(ladder.interact("Climb")) {
+						Time.sleep(Random.nextInt(750, 1250));
+					}
 					Time.sleep(Random.nextInt(750, 1250));
 				} else if(SceneEntities.getNearest(4472) != null) {
-					Camera.turnTo(stairs);
-					stairs.hover();
-					stairs.click(true);
-					Time.sleep(Random.nextInt(750, 1250));
-				} else {
 					fight();
 				}
 			}
