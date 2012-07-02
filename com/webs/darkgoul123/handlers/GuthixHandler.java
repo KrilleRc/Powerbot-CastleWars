@@ -83,10 +83,7 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 	}
 
 	public static void enterPortal(SceneObject portal) {
-		if(!portal.isOnScreen()) {
-			Camera.turnTo(portal);
-			Time.sleep(Random.nextInt(750, 1250));
-		}
+		Camera.turnTo(portal);
 		portal.interact("Enter");
 		Time.sleep(Random.nextInt(750, 1250));
 	}
