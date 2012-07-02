@@ -19,7 +19,7 @@ import com.gmail.darkgoul123.interfaces.GuthixImpl;
 
 public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 
-	public GuthixHandler() {
+	public static void handle() {
 		Tile myLocation = Players.getLocal().getLocation();
 		boolean inWaitingRoom = Widgets.get(57).getChild(1).isOnScreen();
 		SceneObject portal = SceneEntities.getNearest(guthixPortalId);
@@ -71,7 +71,7 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 		Time.sleep(Random.nextInt(750, 1250));
 	}
 
-	private void fight() {
+	private static void fight() {
 		for(Player player : Players.getLoaded()) {
 			if(player.getTeam() != Players.getLocal().getTeam()) {
 				if(!Players.getLocal().isInCombat()) {
@@ -89,7 +89,7 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 		}
 	}
 
-	private void waitForGame(Tile myLocation) {
+	private static void waitForGame(Tile myLocation) {
 		int number = Random.nextInt(0, 10);
 		switch(number) {
 		case 0 :

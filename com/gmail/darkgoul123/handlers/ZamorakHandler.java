@@ -10,13 +10,13 @@ import com.gmail.darkgoul123.interfaces.ZamorakImpl;
 
 public class ZamorakHandler implements ZamorakImpl, EnvironmentImpl {
 
-	public ZamorakHandler() {
+	public static void handle() {
 		Tile myLocation = Players.getLocal().getLocation();
 		SceneObject portal = SceneEntities.getNearest(zamorakPortalId);
 		if(castleArea.contains(myLocation)) {
 			GuthixHandler.enterPortal(portal);
 		} else {
-			new GuthixHandler();
+			GuthixHandler.handle();
 		}
 	}
 

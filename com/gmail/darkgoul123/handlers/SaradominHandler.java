@@ -10,14 +10,13 @@ import com.gmail.darkgoul123.interfaces.SaradominImpl;
 
 public class SaradominHandler implements SaradominImpl, EnvironmentImpl {
 
-	public SaradominHandler() {
+	public static void handle() {
 		Tile myLocation = Players.getLocal().getLocation();
 		SceneObject portal = SceneEntities.getNearest(saradominPortalId);
 		if(castleArea.contains(myLocation)) {
 			GuthixHandler.enterPortal(portal);
 		} else {
-			new GuthixHandler();
+			GuthixHandler.handle();
 		}
 	}
-
 }
