@@ -22,9 +22,7 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 
 	public static void handle() {
 		if(Game.getClientState() == 7) {
-			if(Mouse.click(400, 450, true)) {
-				Time.sleep(Random.nextInt(750, 1250));
-			}
+			logBackIn();
 		}
 		Tile myLocation = Players.getLocal().getLocation();
 		boolean inWaitingRoom = Widgets.get(57).getChild(1).isOnScreen();
@@ -75,6 +73,12 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 					fight();
 				}
 			}
+		}
+	}
+
+	public static void logBackIn() {
+		if(Mouse.click(400, 450, true)) {
+			Time.sleep(Random.nextInt(750, 1250));
 		}
 	}
 

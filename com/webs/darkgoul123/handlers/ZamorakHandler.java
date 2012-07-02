@@ -2,7 +2,6 @@ package com.webs.darkgoul123.handlers;
 
 import org.powerbot.game.api.methods.Game;
 import org.powerbot.game.api.methods.Widgets;
-import org.powerbot.game.api.methods.input.Mouse;
 import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.node.SceneEntities;
 import org.powerbot.game.api.util.Random;
@@ -17,9 +16,7 @@ public class ZamorakHandler implements ZamorakImpl, EnvironmentImpl {
 
 	public static void handle() {
 		if(Game.getClientState() == 7) {
-			if(Mouse.click(400, 450, true)) {
-				Time.sleep(Random.nextInt(750, 1250));
-			}
+			GuthixHandler.logBackIn();
 		}
 		Tile myLocation = Players.getLocal().getLocation();
 		SceneObject portal = SceneEntities.getNearest(zamorakPortalId);
