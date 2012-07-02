@@ -18,6 +18,6 @@ public interface EnvironmentImpl {
 			new Tile(2374, 3129, 0)
 	);
 
-	public int downStairsId = 4415;
+	public int upStairsId = 36484;
 
 }

@@ -28,6 +28,8 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 		boolean inWaitingRoom = Widgets.get(57).getChild(1).isOnScreen();
 		SceneObject portal = SceneEntities.getNearest(guthixPortalId);
 		SceneObject ladder = SceneEntities.getNearest(saradominLadderId, zamorakLadderId);
+		SceneObject stairs = SceneEntities.getNearest(upStairsId);
+		SceneObject trapdoors = SceneEntities.getNearest(4472, 4471);
 		if(Widgets.get(985).getChild(2).isOnScreen()) {
 			if(Widgets.get(985).getChild(77).click(true)){
 				Time.sleep(Random.nextInt(750, 1250));
@@ -66,7 +68,12 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 						Time.sleep(Random.nextInt(750, 1250));
 					}
 					Time.sleep(Random.nextInt(750, 1250));
-				} else if(SceneEntities.getNearest(4472) != null) {
+				} else if(trapdoors != null && stairs != null) {
+					Camera.turnTo(stairs);
+					Time.sleep(750);
+					stairs.interact("Climb-up");
+					Time.sleep(Random.nextInt(750, 1250));
+				} else {
 					fight();
 				}
 			}
