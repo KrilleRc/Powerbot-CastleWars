@@ -33,6 +33,11 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 		if(castleArea.contains(myLocation)) {
 			enterPortal(portal);
 		} else if(inWaitingRoom) {
+			if(Widgets.get(1188).getChild(3).isOnScreen()) {
+				if(Widgets.get(1188).getChild(3).click(true)) {
+					Time.sleep(Random.nextInt(750, 1250));
+				}
+			}
 			waitForGame(myLocation);
 		} else {
 			if(Loop.s == Loop.Style.AFK) {
