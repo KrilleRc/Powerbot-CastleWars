@@ -26,7 +26,9 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 		SceneObject ladder = SceneEntities.getNearest(saradominLadderId, zamorakLadderId);
 		SceneObject stairs = SceneEntities.getNearest(downStairsId);
 		if(Widgets.get(985).getChild(2).isOnScreen()) {
-			Walking.walk(portal);
+			if(Widgets.get(985).getChild(77).click(true)){
+				Time.sleep(Random.nextInt(750, 1250));
+			}
 		}
 		if(castleArea.contains(myLocation)) {
 			enterPortal(portal);
