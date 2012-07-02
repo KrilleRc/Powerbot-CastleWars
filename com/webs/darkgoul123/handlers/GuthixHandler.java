@@ -1,6 +1,7 @@
 package com.webs.darkgoul123.handlers;
 
 
+import org.powerbot.game.api.methods.Game;
 import org.powerbot.game.api.methods.Walking;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.methods.input.Mouse;
@@ -20,6 +21,11 @@ import com.webs.darkgoul123.interfaces.GuthixImpl;
 public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 
 	public static void handle() {
+		if(Game.getClientState() == 7) {
+			if(Mouse.click(400, 450, true)) {
+				Time.sleep(Random.nextInt(750, 1250));
+			}
+		}
 		Tile myLocation = Players.getLocal().getLocation();
 		boolean inWaitingRoom = Widgets.get(57).getChild(1).isOnScreen();
 		SceneObject portal = SceneEntities.getNearest(guthixPortalId);
