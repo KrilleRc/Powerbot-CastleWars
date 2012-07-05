@@ -2,7 +2,6 @@ package com.webs.darkgoul123.handlers;
 
 
 import org.powerbot.game.api.methods.Game;
-import org.powerbot.game.api.methods.Walking;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.methods.input.Mouse;
 import org.powerbot.game.api.methods.interactive.Players;
@@ -43,7 +42,7 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 					Time.sleep(Random.nextInt(750, 1250));
 				}
 			}
-			waitForGame(myLocation);
+			waitForGame();
 		} else {
 			if(Loop.s == Loop.Style.AFK) {
 				if(ladder != null) {
@@ -55,8 +54,7 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 						Time.sleep(Random.nextInt(750, 1250));
 					}
 				} else {
-					Tile t = new Tile(0, 0, 0);
-					waitForGame(t);
+					waitForGame();
 				}
 			} else {
 				if(ladder != null) {
@@ -105,36 +103,21 @@ public class GuthixHandler implements GuthixImpl, EnvironmentImpl {
 					}
 				}
 			} else {
-				Tile t = new Tile(0, 0, 0);
-				waitForGame(t);
+				waitForGame();
 			}
 		}
 	}
 
-	private static void waitForGame(Tile myLocation) {
-		int number = Random.nextInt(0, 10);
+	private static void waitForGame() {
+		int number = Random.nextInt(0, 20);
 		switch(number) {
 		case 0 :
 			Mouse.move(Random.nextInt(0, 700), Random.nextInt(0, 503));
 			Camera.setAngle(Random.nextInt(0, 360));
 			Camera.setPitch(Random.nextInt(0, 20));
 			break;
-		case 1 :
-			int x = Random.nextInt(0, 2);
-			int y = Random.nextInt(2, 4);
-			if(x == 1) {
-				x = -x;
-			}
-			if(y == 3) {
-				y = -y;
-			}
-			if(myLocation.getX() != 0) {
-				Tile newLocation = new Tile(myLocation.getX() + x, myLocation.getY() + y, 0);
-				Walking.walk(newLocation);
-			}
-			break;
 		default :
-			Time.sleep(Random.nextInt(700, 1250));
+			Time.sleep(Random.nextInt(500, 800));
 			break;
 		}
 	}

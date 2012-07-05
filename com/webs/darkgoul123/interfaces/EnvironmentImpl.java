@@ -19,5 +19,4 @@ public interface EnvironmentImpl {
 	);
 
 	public int upStairsId = 36484;
-
 }
